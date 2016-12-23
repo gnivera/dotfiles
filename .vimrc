@@ -15,7 +15,6 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
-
 " 行番号を表示
 set number
 " 現在の行を強調表示
@@ -59,7 +58,11 @@ set expandtab
 set tabstop=2               
 " 行頭でのTab文字の表示幅
 set shiftwidth=2 
-
+" #インサートモードでもhjklで移動（Ctrl押すけどね）
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-h> <Left>
+imap <C-l> <Right>
 
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
@@ -72,7 +75,25 @@ set incsearch
 set wrapscan
 " 検索語をハイライト表示
 
+" NerdTreeを起動時に表示
 autocmd VimEnter * execute 'NERDTree'
+
+" Evervimの設定
+let g:evervim_devtoken='S=s436:U=8a04e0b:E=16083480f3b:C=1592b96df68:P=1cd:A=en-devtoken:V=2:H=bf83a27bf22cc9edc0bfc1fccf17a0ac'
+nnoremap <Space>c :EvervimCreateNote<CR>
+nnoremap <Space>l :EvervimNotebookList<CR>
+
+"------------------------------------
+"" emmet-vim
+"------------------------------------
+
+let g:user_emmet_leader_key='<c-e>'
+let g:user_emmet_settings = {
+    \    'variables': {
+    \      'lang': "ja"
+    \    },
+    \   'indentation': '  '
+    \ }
 
 "dein Scripts-----------------------------
 if &compatible
@@ -96,6 +117,8 @@ set runtimepath+=/Users/Yuki/.vim/bundle/repos/github.com/Shougo/dein.vim
   call dein#add('kchmck/vim-coffee-script')
   call dein#add('marijnh/tern_for_vim')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('kakkyz81/evervim')
+  call dein#add('digitaltoad/vim-jade')
 " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 "
