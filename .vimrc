@@ -95,6 +95,10 @@ let g:user_emmet_settings = {
     \   'indentation': '  '
     \ }
 
+syntax enable
+set background=dark
+colorscheme solarized
+
 "dein Scripts-----------------------------
 if &compatible
 set nocompatible               " Be iMproved
@@ -119,6 +123,7 @@ set runtimepath+=/Users/Yuki/.vim/bundle/repos/github.com/Shougo/dein.vim
   call dein#add('scrooloose/nerdtree')
   call dein#add('kakkyz81/evervim')
   call dein#add('digitaltoad/vim-jade')
+  call dein#add('altercation/vim-colors-solarized')
 " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 "
