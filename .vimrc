@@ -35,7 +35,10 @@ set showmatch
 set laststatus=2
 " タブや改行を表示 (list:表示)
 set list
-"
+" ペーストモードのトグル
+imap <F11> <nop>
+set pastetoggle=<F11>
+
 set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
@@ -81,7 +84,7 @@ set wrapscan
 
 " NerdTreeを起動時に表示
 "autocmd VimEnter * execute 'NERDTree'
-nnoremap <silent><C-n> :NERDTreeToggle<CR>
+nnoremap <silent><C-n> :NERDTreeTabsToggle<CR>
 
 " Evervimの設定
 let g:evervim_devtoken='S=s436:U=8a04e0b:E=16083480f3b:C=1592b96df68:P=1cd:A=en-devtoken:V=2:H=bf83a27bf22cc9edc0bfc1fccf17a0ac'
@@ -170,6 +173,8 @@ set runtimepath+=/Users/Yuki/.vim/bundle/repos/github.com/Shougo/dein.vim
   call dein#add('othree/html5.vim')
   call dein#add('hail2u/vim-css3-syntax')
   call dein#add('jelera/vim-javascript-syntax')
+  call dein#add('myhere/vim-nodejs-complete')
+  call dein#add('jistr/vim-nerdtree-tabs')
 " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 "
