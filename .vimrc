@@ -77,7 +77,12 @@ set incsearch
 " 検索時に最後まで行ったら最初に戻る
 set wrapscan
 " 検索語をハイライト表示
-
+"gvmiの設定
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+set guifont=Ricty_Diminished_Regular:h14
 "------------------------------------
 "" NERDTree
 "------------------------------------
