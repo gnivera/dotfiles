@@ -101,5 +101,4 @@ function tmux_automatically_attach_session()
 }
 tmux_automatically_attach_session
 
-export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`

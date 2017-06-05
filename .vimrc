@@ -148,7 +148,7 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 "dein Scripts-----------------------------
 if &compatible
-set nocompatible               " Be iMproved
+set nocompatible
 endif
 
 " Required:
