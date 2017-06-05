@@ -1,4 +1,3 @@
-
 ### Complement ###
 autoload -U compinit; compinit # 補完機能を有効にする
 setopt auto_list               # 補完候補を一覧で表示する(d)
@@ -44,7 +43,6 @@ tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_co
 alias ls='ls -G'
 
 #tmux
-
 function is_exists() { type "$1" >/dev/null 2>&1; return $?; }
 function is_osx() { [[ $OSTYPE == darwin* ]]; }
 function is_screen_running() { [ ! -z "$STY" ]; }
@@ -59,11 +57,7 @@ function tmux_automatically_attach_session()
         ! is_exists 'tmux' && return 1
 
         if is_tmux_runnning; then
-            echo "${fg_bold[red]} _____ __  __ _   ___  __ ${reset_color}"
-            echo "${fg_bold[red]}|_   _|  \/  | | | \ \/ / ${reset_color}"
-            echo "${fg_bold[red]}  | | | |\/| | | | |\  /  ${reset_color}"
-            echo "${fg_bold[red]}  | | | |  | | |_| |/  \  ${reset_color}"
-            echo "${fg_bold[red]}  |_| |_|  |_|\___//_/\_\ ${reset_color}"
+            echo "${fg_bold[red]} ----- tmux running ----- ${reset_color}"
         elif is_screen_running; then
             echo "This is on screen."
         fi
@@ -106,3 +100,6 @@ function tmux_automatically_attach_session()
     fi
 }
 tmux_automatically_attach_session
+
+export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`

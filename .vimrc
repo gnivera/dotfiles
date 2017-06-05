@@ -1,7 +1,7 @@
 "-----------------------
 "Standard Configuration
 "-----------------------
-"symlink test
+
 " setting
 "文字コードをUFT-8に設定
 set fenc=utf-8
@@ -38,7 +38,8 @@ set list
 " ペーストモードのトグル
 imap <F11> <nop>
 set pastetoggle=<F11>
-
+"syntaxハイライトの上限を設定する
+set synmaxcol=200
 set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
@@ -61,6 +62,10 @@ set expandtab
 set tabstop=2               
 " 行頭でのTab文字の表示幅
 set shiftwidth=2 
+"
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
 " #インサートモードでもhjklで移動（Ctrl押すけどね）
 imap <C-j> <Down>
 imap <C-k> <Up>
@@ -77,6 +82,15 @@ set incsearch
 " 検索時に最後まで行ったら最初に戻る
 set wrapscan
 " 検索語をハイライト表示
+
+" vimdiffの色設定
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
+
+
+
 "gvmiの設定
 set guioptions-=r
 set guioptions-=R
@@ -90,23 +104,6 @@ set guifont=Ricty_Diminished_Regular:h14
 " NerdTreeを起動時に表示
 "autocmd VimEnter * execute 'NERDTree'
 nnoremap <silent><C-n> :NERDTreeTabsToggle<CR>
-
-" Evervimの設定
-let g:evervim_devtoken='S=s436:U=8a04e0b:E=16083480f3b:C=1592b96df68:P=1cd:A=en-devtoken:V=2:H=bf83a27bf22cc9edc0bfc1fccf17a0ac'
-nnoremap <Space>c :EvervimCreateNote<CR>
-nnoremap <Space>l :EvervimNotebookList<CR>
-
-"------------------------------------
-"" emmet-vim
-"------------------------------------
-
-let g:user_emmet_leader_key='<c-e>'
-let g:user_emmet_settings = {
-    \    'variables': {
-    \      'lang': "ja"
-    \    },
-    \   'indentation': '  '
-    \ }
 
 syntax enable
 set background=dark
@@ -131,7 +128,7 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ }
 
 " Plugin key-mappings.
-inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-g> neocomplcache#undo_completion()
 "inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " Recommended key-mappings.
@@ -155,10 +152,10 @@ set nocompatible               " Be iMproved
 endif
 
 " Required:
-set runtimepath+=/Users/Yuki/.vim/bundle/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/Yuki/.vim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-  call dein#begin('/Users/Yuki/.vim/bundle')
+  call dein#begin('/Users/Yuki/.vim/dein')
 
 " Let dein manage dein
 " Required:
@@ -168,18 +165,13 @@ set runtimepath+=/Users/Yuki/.vim/bundle/repos/github.com/Shougo/dein.vim
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/neocomplcache.vim')
-  call dein#add('mattn/emmet-vim')
-  call dein#add('kchmck/vim-coffee-script')
-  call dein#add('marijnh/tern_for_vim')
   call dein#add('scrooloose/nerdtree')
-  call dein#add('kakkyz81/evervim')
-  call dein#add('digitaltoad/vim-jade')
-  call dein#add('altercation/vim-colors-solarized')
-  call dein#add('othree/html5.vim')
-  call dein#add('hail2u/vim-css3-syntax')
-  call dein#add('jelera/vim-javascript-syntax')
-  call dein#add('myhere/vim-nodejs-complete')
   call dein#add('jistr/vim-nerdtree-tabs')
+  call dein#add('jelera/vim-javascript-syntax')
+  call dein#add('marijnh/tern_for_vim')
+  call dein#add('myhere/vim-nodejs-complete')
+  call dein#add('leafgarland/typescript-vim')
+  call dein#add('altercation/vim-colors-solarized')
 " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 "
