@@ -1,8 +1,15 @@
 {
+    "editor.autoClosingBrackets": false,
+    "editor.folding": false
     "editor.fontFamily": "Monaco, 'Courier New', monospace",
     "editor.fontSize": 13,
+    "editor.formatOnSave": false,
     "editor.minimap.enabled": false,
+    "editor.renderIndentGuides": false,
+    "editor.renderLineHighlight": "none",
+    "files.autoSave": "onFocusChange",
     "locale": "en-US",
+    "material-icon-theme.showUpdateMessage": false,
     "material-icon-theme.showWelcomeMessage": false,
     "terminal.integrated.shell.osx": "/bin/zsh",
     "vim.disableAnnoyingNeovimMessage": true,
@@ -10,14 +17,7 @@
     "window.zoomLevel": 0.5,
     "workbench.colorTheme": "Solarized Dark",
     "workbench.editor.enablePreview": false,
+    "workbench.editor.tabCloseButton": "off",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.welcome.enabled": false,
-    "editor.formatOnSave": false,
-    "material-icon-theme.showUpdateMessage": false,
-    "editor.renderLineHighlight": "none",
-    "workbench.editor.tabCloseButton": "off",
-    "editor.autoClosingBrackets": false,
-    "files.autoSave": "onFocusChange",
-    "editor.renderIndentGuides": false,
-    "editor.folding": false
 }
