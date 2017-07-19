@@ -1,6 +1,6 @@
 {
     "editor.autoClosingBrackets": false,
-    "editor.folding": false
+    "editor.folding": false,
     "editor.fontFamily": "Monaco, 'Courier New', monospace",
     "editor.fontSize": 13,
     "editor.formatOnSave": false,
@@ -19,5 +19,5 @@
     "workbench.editor.enablePreview": false,
     "workbench.editor.tabCloseButton": "off",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.welcome.enabled": false,
+    "workbench.welcome.enabled": false
 }
