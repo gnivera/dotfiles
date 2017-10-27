@@ -102,3 +102,4 @@ function tmux_automatically_attach_session()
 tmux_automatically_attach_session
 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+[[ -s /Users/Yuki/.tmuxinator/scripts/tmuxinator ]] && source /Users/Yuki/.tmuxinator/scripts/tmuxinator
