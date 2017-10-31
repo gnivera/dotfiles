@@ -5,7 +5,7 @@
     "editor.fontSize": 14,
     "editor.formatOnSave": false,
     "editor.minimap.enabled": true,
-    "editor.renderIndentGuides": false,
+    "editor.renderIndentGuides": true,
     "editor.renderLineHighlight": "none",
     "files.autoSave": "off",
     "locale": "en-US",
@@ -29,5 +29,6 @@
     "html.autoClosingTags": true,
     "terminal.integrated.fontSize": 14,
     "editor.tabSize": 2,
-    "editor.minimap.renderCharacters": false
+    "editor.minimap.renderCharacters": false,
+    "editor.renderWhitespace": "none"
 }

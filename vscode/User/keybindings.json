@@ -14,10 +14,6 @@
     "key": "ctrl+x",
     "command": "editor.action.clipboardCutAction",
     "when": "editorTextFocus && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+f",
-    "command": "editor.action.startFindReplaceAction"
   }
 {
     "key": "cmd+9",
