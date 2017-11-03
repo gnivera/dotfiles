@@ -13,7 +13,8 @@
 
 # alias
 alias ls='ls -G'
-alias d ='docker'
+alias d='docker'
+alias mx='tmuxinator'
 
 # complement
 autoload -U compinit; compinit
