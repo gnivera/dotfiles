@@ -28,6 +28,7 @@ compinit
 zstyle ':completion:*:default' menu select=1
 
 # prompt
+PROMPT='%c $ '
 autoload -U colors; colors
 tmp_prompt="%{${fg[cyan]}%}%n%# %{${reset_color}%}"
 tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
