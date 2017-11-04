@@ -11,6 +11,15 @@
 #     |/__/         \/__/         \/__/         \/__/         \/__/
 #
 
+# git prompt 
+source ~/.git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM=auto
+PS1='[%n@%m %c$__git_ps1 " (%s)")]\$ '
+precmd () { __git_ps1  "%c $" "%s " }
+
 # alias
 alias ls='ls -G'
 alias d='docker'
@@ -28,7 +37,7 @@ compinit
 zstyle ':completion:*:default' menu select=1
 
 # prompt
-PROMPT='%c $ '
+#PROMPT='%c $ '
 autoload -U colors; colors
 tmp_prompt="%{${fg[cyan]}%}%n%# %{${reset_color}%}"
 tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
