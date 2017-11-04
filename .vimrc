@@ -115,11 +115,8 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/neocomplcache.vim')
   call dein#add('scrooloose/nerdtree')
-  call dein#add('jistr/vim-nerdtree-tabs')
   call dein#add('jelera/vim-javascript-syntax')
-  call dein#add('marijnh/tern_for_vim')
   call dein#add('myhere/vim-nodejs-complete')
-  call dein#add('leafgarland/typescript-vim')
   call dein#add('altercation/vim-colors-solarized')
 " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
