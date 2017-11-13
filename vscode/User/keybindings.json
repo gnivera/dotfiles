@@ -15,7 +15,7 @@
     "command": "editor.action.clipboardCutAction",
     "when": "editorTextFocus && !inDebugRepl"
   }
-{
+  {
     "key": "cmd+9",
     "command": "workbench.action.terminal.focus",
     "when": "editorTextFocus"
@@ -29,5 +29,5 @@
     "key": "cmd+c",
     "command": "extension.vim_cmd+c",
     "when": "editorTextFocus && vim.active && vim.overrideCopy && vim.use<D-c> && !inDebugRepl"
-  },
+  }  
 ]

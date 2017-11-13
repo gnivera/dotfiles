@@ -30,5 +30,17 @@
     "terminal.integrated.fontSize": 14,
     "editor.tabSize": 2,
     "editor.minimap.renderCharacters": false,
-    "editor.renderWhitespace": "none"
+    "editor.renderWhitespace": "none",
+      "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html"
+  },
+  "emmet.syntaxProfiles": {
+    "html": {
+      "attr_quotes": "single"
+    },
+    "jsx": {
+      "self_closing_tag": true
+    }
+  }
 }
