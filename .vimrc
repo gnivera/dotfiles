@@ -35,7 +35,7 @@ nnoremap k gk
 set nocompatible
 set whichwrap=b,s,h,l,<,>,[,]
 set backspace=indent,eol,start
-set list listchars=tab:\?\-
+set list listchars=tab:\▸\-
 set expandtab
 set tabstop=2               
 set shiftwidth=2 
@@ -120,6 +120,8 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
   call dein#add('jelera/vim-javascript-syntax')
   call dein#add('myhere/vim-nodejs-complete')
   call dein#add('altercation/vim-colors-solarized')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('fatih/vim-go')
 " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 "
