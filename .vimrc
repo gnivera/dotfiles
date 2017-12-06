@@ -35,19 +35,24 @@ nnoremap k gk
 set nocompatible
 set whichwrap=b,s,h,l,<,>,[,]
 set backspace=indent,eol,start
-set list listchars=tab:\▸\-
+set list listchars=tab:\?\-
 set expandtab
 set tabstop=2               
 set shiftwidth=2 
-execute "set colorcolumn=" . join(range(81, 9999), ',')
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
 " insert mode
 imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-h> <Left>
 imap <C-l> <Right>
+
+"if exists('$TMUX')
+"  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+"  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+"else
+"  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+"  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+"endif
 
 " search
 set ignorecase
@@ -67,9 +72,6 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 set guifont=Ricty_Diminished_Regular:h14
-
-" NERDTree
-nnoremap <silent><C-n> :NERDTreeTabsToggle<CR>
 
 " other
 syntax enable
@@ -132,4 +134,3 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 if dein#check_install()
   call dein#install()
 endif
-

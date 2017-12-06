@@ -4,3 +4,8 @@
 git clone https://github.com/yu293/dotfiles.git
 sh init.sh
 ```
+## dein
+```
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh ./installer.sh ~/.vim/dein/
+```
