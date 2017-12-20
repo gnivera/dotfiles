@@ -30,6 +30,11 @@ alias g='git'
 alias d='docker'
 alias mx='tmuxinator'
 
+# peco
+alias pls='cd $(ghq list -p | peco)'
+alias pfind='cd "$(find . -type d | peco)"'
+
+
 # complement
 autoload -U compinit; compinit
 setopt auto_list

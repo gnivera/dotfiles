@@ -13,3 +13,5 @@
     ui = auto
 [gui]
     encoding = utf-8
+[ghq]
+	root = ~/src
