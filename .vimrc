@@ -116,7 +116,6 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/neocomplcache.vim')
-  call dein#add('scrooloose/nerdtree')
   call dein#add('jelera/vim-javascript-syntax')
   call dein#add('myhere/vim-nodejs-complete')
   call dein#add('altercation/vim-colors-solarized')
