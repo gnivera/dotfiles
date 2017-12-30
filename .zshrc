@@ -46,6 +46,13 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 compinit
 zstyle ':completion:*:default' menu select=1
 
+# history
+HISTFILE=~/.zsh_history
+HISTSIZE=6000000
+SAVEHIST=6000000
+setopt hist_ignore_dups
+setopt share_history
+
 # prompt
 #PROMPT='%c $ '
 autoload -U colors; colors
@@ -115,4 +122,4 @@ function tmux_automatically_attach_session()
         fi
     fi
 }
-tmux_automatically_attach_session
+#tmux_automatically_attach_session

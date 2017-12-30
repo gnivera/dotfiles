@@ -53,6 +53,19 @@ imap <C-l> <Right>
 "  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 "  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 "endif
+"
+
+" lightline.vim
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 " search
 set ignorecase
@@ -121,6 +134,7 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
   call dein#add('altercation/vim-colors-solarized')
   call dein#add('Shougo/unite.vim')
   call dein#add('fatih/vim-go')
+  call dein#add('itchyny/lightline.vim')
 " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 "
