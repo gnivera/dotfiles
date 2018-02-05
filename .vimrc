@@ -79,12 +79,12 @@ highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
 
-"gvmi
+"gvim
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
-set guifont=Ricty_Diminished_Regular:h14
+set guifont=Monaco:h15
 
 " other
 syntax enable
