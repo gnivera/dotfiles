@@ -28,6 +28,7 @@ precmd () { __git_ps1  "%c $" "%s " }
 alias ls='ls -G'
 alias g='git'
 alias d='docker'
+alias v='vagrant'
 alias dcom='docker-compose'
 alias mx='tmuxinator'
 
