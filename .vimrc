@@ -88,8 +88,9 @@ set guifont=Monaco:h15
 
 " other
 syntax enable
-set background=dark
-colorscheme solarized
+
+" Disable all beeps
+set visualbell t_vb=
 
 " neocomplcache
 let g:acp_enableAtStartup = 0
