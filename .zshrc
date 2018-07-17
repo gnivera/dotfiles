@@ -25,18 +25,14 @@ PS1='[%n@%m %c$__git_ps1 " (%s)")]\$ '
 precmd () { __git_ps1  "%c $" "%s " }
 
 # alias
-alias ls='ls -G'
+alias ll='ls -lG'
+alias q='ghq'
 alias g='git'
 alias d='docker'
 alias j='idea'
 alias v='vagrant'
 alias dcom='docker-compose'
 alias mx='tmuxinator'
-
-# peco
-alias pls='cd $(ghq list -p | peco)'
-alias pfind='cd "$(find . -type d | peco)"'
-
 
 # complement
 autoload -U compinit; compinit
