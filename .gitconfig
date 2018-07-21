@@ -16,8 +16,9 @@
 [ghq]
 	root = ~/src
 [core]
-	excludesfile = /Users/Yuki/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vim
+	autocrlf = input
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
