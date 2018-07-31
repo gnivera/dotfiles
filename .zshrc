@@ -27,6 +27,7 @@ precmd () { __git_ps1  "%c $" "%s " }
 # alias
 alias ll='ls -lG'
 alias q='ghq'
+alias s='svn'
 alias g='git'
 alias d='docker'
 alias j='idea'
