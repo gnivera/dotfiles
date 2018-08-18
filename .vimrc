@@ -88,6 +88,7 @@ set guifont=Monaco:h15
 
 " other
 syntax enable
+set updatetime=250
 
 " Disable all beeps
 set visualbell t_vb=
@@ -136,6 +137,7 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
   call dein#add('Shougo/unite.vim')
   call dein#add('fatih/vim-go')
   call dein#add('itchyny/lightline.vim')
+  call dein#add('airblade/vim-gitgutter')
 " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 "
