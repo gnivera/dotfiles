@@ -134,7 +134,6 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
   call dein#add('jelera/vim-javascript-syntax')
   call dein#add('myhere/vim-nodejs-complete')
   call dein#add('altercation/vim-colors-solarized')
-  call dein#add('Shougo/unite.vim')
   call dein#add('fatih/vim-go')
   call dein#add('itchyny/lightline.vim')
   call dein#add('airblade/vim-gitgutter')
