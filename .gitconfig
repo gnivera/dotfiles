@@ -1,11 +1,8 @@
 [alias]
-    st = status
-    br = branch
-    co = checkout
-    diff = git diff --word-diff
-    cm = commit -m
-    gr = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    lg = log --name-status
+	st = status
+	br = branch
+	co = checkout
+	diff = git diff --word-diff
 [user]
 	name = Yuki Sato
 	email = yukisato.d@gmail.com
@@ -19,6 +16,8 @@
 	excludesfile = ~/.gitignore_global
 	editor = vim
 	autocrlf = input
+[difftool]
+	prompt = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
