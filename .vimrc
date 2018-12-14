@@ -137,6 +137,8 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
   call dein#add('fatih/vim-go')
   call dein#add('itchyny/lightline.vim')
   call dein#add('airblade/vim-gitgutter')
+  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
+  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
 " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 "
