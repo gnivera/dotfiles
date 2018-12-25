@@ -13,7 +13,7 @@
 
 # environment
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$HOME/dotfiles/bin:$PATH:$GOPATH/bin
 
 # git prompt 
 source ~/.git-prompt.sh
