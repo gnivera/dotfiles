@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+#
+# Take notes on today's date
+# TODO Make the save destination available in the setting file
+
+vim ~/Dropbox/doc/logs/`date +%Y-%m-%d`.md
