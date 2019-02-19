@@ -86,6 +86,12 @@ set guioptions-=l
 set guioptions-=L
 set guifont=Monaco:h15
 
+" Vim Markdown
+let g:vim_markdown_folding_disabled = 1
+
+" NERDTree
+map <C-n> :NERDTreeFocus<CR>
+
 " other
 syntax enable
 set updatetime=250
@@ -139,6 +145,9 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
   call dein#add('airblade/vim-gitgutter')
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+  call dein#add('plasticboy/vim-markdown')
+  call dein#add('godlygeek/tabular')
+  call dein#add('scrooloose/nerdtree')
 " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 "

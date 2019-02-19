@@ -1,3 +1,4 @@
+
 #      ___           ___           ___           ___           ___
 #    /\__\         /\__\         /\  \         /\  \         /\__\
 #    /::|  |       /:/ _/_        \:\  \       /::\  \       /:/  /
@@ -26,6 +27,7 @@ precmd () { __git_ps1  "%c $" "%s " }
 
 # alias
 alias ll='ls -lG'
+alias e='emacs'
 alias q='ghq'
 alias s='svn'
 alias g='git'
@@ -34,6 +36,7 @@ alias j='idea'
 alias v='vagrant'
 alias dcom='docker-compose'
 alias mx='tmuxinator'
+alias ec='emacs -nw ~/.emacs.d/init.el'
 
 # complement
 autoload -U compinit; compinit
@@ -73,16 +76,22 @@ function _ssh {
 fco() {
   local branches branch
   branches=$(git branch -vv) &&
-  branch=$(echo "$branches" | fzf +m) &&
-  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
-}
+    branch=$(echo "$branches" | fzf +m) &&
+    git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+  }
 
 # checkout git branch (including remote branches)
 fcor() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
+    branch=$(echo "$branches" |
+    fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+    git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+  }
 
+function share_history {
+  history -a
+  history -c
+  history -r
+}
+PROMPT_COMMAND='share_history'
