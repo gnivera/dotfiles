@@ -6,6 +6,14 @@
 ;;    \ \_\ \_\ \_\ \_\ \__\/\_\ \____\/\____\
 ;;     \/_/\/_/\/_/\/_/\/__/\/_/\/____/\/____/
 
+;; pacakge setings
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives  '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+(package-initialize)
+
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode -1)
@@ -13,7 +21,34 @@
 
 (set-frame-parameter (selected-frame) 'alpha '(80 . 80))
 (add-to-list 'default-frame-alist '(alpha . (80 . 80)))
-
-(load-theme 'misterioso t)
+(load-theme 'manoj-dark t)
 (global-font-lock-mode t)
 (add-to-list 'default-frame-alist '(font . "monaco-14"))
+(setq default-directory "~/dropbox" )
+(setq org-startup-indented t)
+(setq org-indent-mode-turns-on-hiding-stars nil)
+(setq org-indent-indentation-per-level 4)
+(setq org-startup-folded 'content)
+
+(setq scroll-conservatively 35
+  scroll-margin 0
+  scroll-step 1)
+
+;; permanently commands History
+(setq desktop-globals-to-save '(extended-command-history))
+(setq desktop-files-not-to-save "")
+(desktop-save-mode 1)
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (magit neotree))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

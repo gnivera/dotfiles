@@ -1,0 +1,13 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Wed Feb 20 21:57:10 2019
+;; Desktop file format version 208
+;; Emacs version 26.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (23661 20134 483201 0) (desktop . "208") "yuki@YukinoMacBook-Pro-2.local" nil nil ((((minibuffer . t) (font-backend mac-ct) (fontsize . 0) (font . "-*-Monaco-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "WhiteSmoke") (background-color . "black") (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (undecorated) (ns-appearance . unbound) (ns-transparent-titlebar . unbound) (z-group) (no-focus-on-map) (no-accept-focus) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha 80 . 80) (fullscreen) (display-type . color) (background-mode . dark) (cursor-color . "orchid") (environment) (scroll-bar-background . "grey75") (scroll-bar-foreground . "WhiteSmoke") (mouse-color . "OrangeRed") (border-color . "gold") (modeline . t) (unsplittable) (frameset--id . "3D2F-9187-A9D6-77B8") (frameset--mini t . t) (display . "YukinoMacBook-Pro-2.local") (icon-name) (visibility . t) (explicit-name) (tool-bar-position . top) (height . 57) (width . 124) (left . 849) (top . 65)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 76) (min-pixel-width . 80) (min-pixel-height-ignore . 38) (min-pixel-width-ignore . 32) (min-pixel-height-safe . 19) (min-pixel-width-safe . 16)) leaf (pixel-width . 1008) (pixel-height . 1064) (total-width . 126) (total-height . 56) (normal-height . 1.0) (normal-width . 1.0) (buffer "init.el" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 1336) (start . 1))))])
+(setq extended-command-history '("magit-status" "package-list-packages"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
