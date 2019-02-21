@@ -7,9 +7,9 @@
 	name = Yuki Sato
 	email = yukisato.d@gmail.com
 [color]
-    ui = auto
+	ui = auto
 [gui]
-    encoding = utf-8
+	encoding = utf-8
 [ghq]
 	root = ~/src
 [core]
@@ -18,11 +18,4 @@
 	autocrlf = input
 [difftool]
 	prompt = false
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = ~/.stCommitMsg
+

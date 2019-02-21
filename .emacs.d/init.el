@@ -23,22 +23,33 @@
 (add-to-list 'default-frame-alist '(alpha . (80 . 80)))
 (load-theme 'manoj-dark t)
 (global-font-lock-mode t)
-(add-to-list 'default-frame-alist '(font . "monaco-14"))
+(add-to-list 'default-frame-alist '(font . "Ricty Diminished-16"))
 (setq default-directory "~/dropbox" )
 (setq org-startup-indented t)
 (setq org-indent-mode-turns-on-hiding-stars nil)
 (setq org-indent-indentation-per-level 4)
 (setq org-startup-folded 'content)
 
+;; show line number
+(global-display-line-numbers-mode)
+
 (setq scroll-conservatively 35
   scroll-margin 0
   scroll-step 1)
+
+;; don't create backup/auto save file
+(setq make-backup-files nil)
+(setq auto-save-default nil)
 
 ;; permanently commands History
 (setq desktop-globals-to-save '(extended-command-history))
 (setq desktop-files-not-to-save "")
 (desktop-save-mode 1)
 
+;; org-download
+(require 'org-download)
+(setq-default org-download-image-dir "~/Dropbox/doc/images")
+(add-hook 'dired-mode-hook 'org-download-enable)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
