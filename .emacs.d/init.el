@@ -14,6 +14,11 @@
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
 
+;; ido
+(ido-mode 1)
+(ido-everywhere 1)
+(setq ido-enable-flex-matching t)
+
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode -1)
@@ -23,12 +28,28 @@
 (add-to-list 'default-frame-alist '(alpha . (80 . 80)))
 (load-theme 'manoj-dark t)
 (global-font-lock-mode t)
-(add-to-list 'default-frame-alist '(font . "Ricty Diminished-16"))
+(add-to-list 'default-frame-alist '(font . "monaco-13"))
 (setq default-directory "~/dropbox" )
+
 (setq org-startup-indented t)
 (setq org-indent-mode-turns-on-hiding-stars nil)
 (setq org-indent-indentation-per-level 4)
 (setq org-startup-folded 'content)
+
+;; org-capture
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/Dropbox/org/gtd.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
+        ("j" "Journal" entry (file+datetree "~/Dropbox/org/journal.org")
+         "* %?\nEntered on %U\n  %i\n  %a")))
+
+(global-set-key (kbd "C-c C-c") 'org-capture)
+
+;; ido-vertical-mode
+(require 'ido-vertical-mode)
+(ido-mode 1)
+(ido-vertical-mode 1)
+(setq ido-vertical-define-keys 'C-n-and-C-p-only)
 
 ;; show line number
 (global-display-line-numbers-mode)
@@ -56,7 +77,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (magit neotree))))
+ '(package-selected-packages (quote (ido-vertical-mode magit neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

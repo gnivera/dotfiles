@@ -1,4 +1,3 @@
-
 #      ___           ___           ___           ___           ___
 #    /\__\         /\__\         /\  \         /\  \         /\__\
 #    /::|  |       /:/ _/_        \:\  \       /::\  \       /:/  /
@@ -28,15 +27,11 @@ precmd () { __git_ps1  "%c $" "%s " }
 # alias
 alias ll='ls -lG'
 alias e='emacs'
-alias q='ghq'
-alias s='svn'
 alias g='git'
 alias d='docker'
 alias j='idea'
-alias v='vagrant'
-alias dcom='docker-compose'
-alias mx='tmuxinator'
 alias ec='emacs -nw ~/.emacs.d/init.el'
+alias q='cd $(ghq root)/$(ghq list | fzf)'
 
 # complement
 autoload -U compinit; compinit
