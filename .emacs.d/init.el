@@ -36,13 +36,18 @@
 (setq org-indent-indentation-per-level 4)
 (setq org-startup-folded 'content)
 
+;; swiper
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c u") 'swiper-all)
+
+;; dashboard
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+
 ;; org-capture
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/Dropbox/org/gtd.org" "Tasks")
-         "* TODO %?\n  %i\n  %a")
-        ("j" "Journal" entry (file+datetree "~/Dropbox/org/journal.org")
-         "* %?\nEntered on %U\n  %i\n  %a")))
-
+      '(("t" "Think" entry (file "~/Dropbox/doc/THINK.org")
+        "* %?\n  %i\n %U ")))
 (global-set-key (kbd "C-c C-c") 'org-capture)
 
 ;; ido-vertical-mode
@@ -77,7 +82,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (ido-vertical-mode magit neotree))))
+ '(package-selected-packages
+   (quote
+    (speed-type swiper dashboard ido-vertical-mode magit neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
