@@ -3,8 +3,8 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
- (filename . "~/Dropbox/org/gtd.org")
- (front-context-string)
- (rear-context-string . "sks\n** TODO Foo\n")
- (position . 21))
+ (filename . "~/Dropbox/doc/TIPS.org")
+ (front-context-string . "* git-bisect 問題を")
+ (rear-context-string . "d/issues/26635)\n")
+ (position . 2250))
 )

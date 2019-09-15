@@ -14,6 +14,8 @@
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
 
+(ivy-mode 1)
+
 ;; ido
 (ido-mode 1)
 (ido-everywhere 1)
@@ -47,8 +49,12 @@
 ;; org-capture
 (setq org-capture-templates
       '(("t" "Think" entry (file "~/Dropbox/doc/THINK.org")
-        "* %?\n  %i\n %U ")))
-(global-set-key (kbd "C-c C-c") 'org-capture)
+        "* %?\n  %i\n %U ")
+       ("p" "Tips" entry (file "~/Dropbox/doc/TIPS.org")
+        "* %i %i %U ")
+       ("m" "Poem" entry (file "~/Dropbox/doc/poem.org")
+        "* %i %i %U ")))
+(global-set-key (kbd "C-c c") 'org-capture)
 
 ;; ido-vertical-mode
 (require 'ido-vertical-mode)

@@ -3,9 +3,6 @@
 	br = branch
 	co = checkout
 	diff = git diff --word-diff
-[user]
-	name = Yuki Sato
-	email = yukisato.d@gmail.com
 [color]
 	ui = auto
 [gui]
