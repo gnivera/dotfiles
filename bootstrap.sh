@@ -1,5 +1,6 @@
 #!/bin/sh
 
+CURRENTPATH=$(pwd)
 DOTPATH=$HOME/dotfiles
 
 if [ ! -d "$DOTPATH" ]; then
@@ -23,4 +24,4 @@ for f in .??*; do
   ln -snfv "$HOME"/dotfiles/"$f" "$HOME"/"$f"
 done
 
-cd "$HOME" || exit
+cd "$CURRENTPATH" || exit
