@@ -1,7 +1,7 @@
 # environment
 export GOPATH=$HOME/go
 
-# git prompt 
+# git prompt
 if [[ -e $HOME/.git-prompt.sh ]]; then
   source $HOME/.git-prompt.sh
   GIT_PS1_SHOWDIRTYSTATE=true
@@ -9,7 +9,9 @@ if [[ -e $HOME/.git-prompt.sh ]]; then
   GIT_PS1_SHOWSTASHSTATE=true
   GIT_PS1_SHOWUPSTREAM=auto
   PS1='[%n@%m %c$__git_ps1 " (%s)")]\$ '
-  precmd () { __git_ps1  "%c $" "%s " }
+  precmd() {
+    __git_ps1 "%c $" "%s "
+  }
 fi
 
 # alias
@@ -19,7 +21,8 @@ alias d='docker'
 alias j='idea'
 
 # complement
-autoload -U compinit; compinit
+autoload -U compinit
+compinit
 setopt auto_list
 setopt auto_menu
 setopt list_packed
@@ -37,7 +40,8 @@ setopt hist_ignore_dups
 setopt share_history
 
 # prompt
-autoload -U colors; colors
+autoload -U colors
+colors
 tmp_prompt="%{${fg[cyan]}%}%n%# %{${reset_color}%}"
 tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
 tmp_rprompt="%{${fg[green]}%}[%~]%{${reset_color}%}"
@@ -47,8 +51,8 @@ tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_co
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
-function _ssh {
-  compadd `fgrep 'Host ' ~/.ssh/config | awk '{print $2}' | sort`;
+function _ssh() {
+  compadd $(fgrep 'Host ' ~/.ssh/config | awk '{print $2}' | sort)
 }
 
 # checkout git branch
@@ -57,18 +61,18 @@ fco() {
   branches=$(git branch -vv) &&
     branch=$(echo "$branches" | fzf +m) &&
     git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
-  }
+}
 
 # checkout git branch (including remote branches)
 fcor() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
     branch=$(echo "$branches" |
-    fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+      fzf-tmux -d $((2 + $(wc -l <<<"$branches"))) +m) &&
     git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-  }
+}
 
-function share_history {
+function share_history() {
   history -a
   history -c
   history -r

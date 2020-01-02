@@ -1,20 +1,20 @@
 #!/bin/sh
 
-DOTFILESPATH=$HOME/dotfiles
+DOTPATH=$HOME/dotfiles
 
-if [ ! -d "$DOTFILESPATH" ]; then
-  git clone git@github.com:gnivera/dotfiles.git "$DOTFILESPATH"
+if [ ! -d "$DOTPATH" ]; then
+  git clone git@github.com:gnivera/dotfiles.git "$DOTPATH"
 else
-  echo "$DOTFILESPATH already downloaded. Updating..."
-  cd "$DOTFILESPATH"
+  echo "$DOTPATH already downloaded. Updating..."
+  cd "$DOTPATH" || exit
   git stash
   git checkout master
   git pull origin master
 fi
 
-curl -o $HOME/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+curl -o "$HOME"/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 
-cd "$DOTFILESPATH"
+cd "$DOTPATH" || exit
 
 for f in .??*; do
   [ "$f" = ".DS_Store" ] && continue
@@ -23,4 +23,4 @@ for f in .??*; do
   ln -snfv "$HOME"/dotfiles/"$f" "$HOME"/"$f"
 done
 
-cd $HOME
+cd "$HOME" || exit
