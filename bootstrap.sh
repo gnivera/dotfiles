@@ -3,7 +3,7 @@
 DOTFILESPATH=$HOME/dotfiles
 
 if [ ! -d "$DOTFILESPATH" ]; then
-  git clone https://github.com/gnivera/dotfiles "$DOTFILESPATH"
+  git clone git@github.com:gnivera/dotfiles.git "$DOTFILESPATH"
 else
   echo "$DOTFILESPATH already downloaded. Updating..."
   cd "$DOTFILESPATH"
