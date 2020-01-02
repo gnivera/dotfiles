@@ -3,7 +3,7 @@
 ## usage
 
 ```
-bash -c "$(curl -L https://raw.githubusercontent.com/ikuwow/dotfiles/master/bootstrap.sh)"
+bash -c "$(curl -L https://raw.githubusercontent.com/gnivera/dotfiles/master/bootstrap.sh)"
 ```
 
 ## dein
