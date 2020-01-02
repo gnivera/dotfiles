@@ -2,7 +2,7 @@
 
 # dotfiles
 
-## usage
+## Bootstrap
 
 ```
 bash -c "$(curl -L https://raw.githubusercontent.com/gnivera/dotfiles/master/bootstrap.sh)"
