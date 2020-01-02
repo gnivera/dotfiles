@@ -2,13 +2,15 @@
 export GOPATH=$HOME/go
 
 # git prompt 
-source $HOME/.git-prompt.sh
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWSTASHSTATE=true
-GIT_PS1_SHOWUPSTREAM=auto
-PS1='[%n@%m %c$__git_ps1 " (%s)")]\$ '
-precmd () { __git_ps1  "%c $" "%s " }
+if [[ -e $HOME/.git-prompt.sh ]]; then
+  source $HOME/.git-prompt.sh
+  GIT_PS1_SHOWDIRTYSTATE=true
+  GIT_PS1_SHOWUNTRACKEDFILES=true
+  GIT_PS1_SHOWSTASHSTATE=true
+  GIT_PS1_SHOWUPSTREAM=auto
+  PS1='[%n@%m %c$__git_ps1 " (%s)")]\$ '
+  precmd () { __git_ps1  "%c $" "%s " }
+fi
 
 # alias
 alias ll='ls -lG'
