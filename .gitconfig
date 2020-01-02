@@ -1,5 +1,9 @@
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim
+	autocrlf = input
 [alias]
-	st = status
+  st = status
 	br = branch
 	co = checkout
 	diff = git diff --word-diff
@@ -8,11 +12,9 @@
 [gui]
 	encoding = utf-8
 [ghq]
-	root = ~/src
-[core]
-	excludesfile = ~/.gitignore_global
-	editor = emacs -nw
-	autocrlf = input
+	root = $HOME/src
 [difftool]
 	prompt = false
-
+[user]
+	name = Yuki Sato
+	email = yukisato.d@gmail.com

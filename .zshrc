@@ -1,22 +1,8 @@
-#      ___           ___           ___           ___           ___
-#    /\__\         /\__\         /\  \         /\  \         /\__\
-#    /::|  |       /:/ _/_        \:\  \       /::\  \       /:/  /
-#   /:/:|  |      /:/ /\  \        \:\  \     /:/\:\__\     /:/  /
-#  /:/|:|  |__   /:/ /::\  \   ___ /::\  \   /:/ /:/  /    /:/  /  ___
-# /:/ |:| /\__\ /:/_/:/\:\__\ /\  /:/\:\__\ /:/_/:/__/___ /:/__/  /\__\
-# \/__|:|/:/  / \:\/:/ /:/  / \:\/:/  \/__/ \:\/:::::/  / \:\  \ /:/  /
-#     |:/:/  /   \::/ /:/  /   \::/__/       \::/~~/~~~~   \:\  /:/  /
-#     |::/  /     \/_/:/  /     \:\  \        \:\~~\        \:\/:/  /
-#     |:/  /        /:/  /       \:\__\        \:\__\        \::/  /
-#     |/__/         \/__/         \/__/         \/__/         \/__/
-#
-
 # environment
 export GOPATH=$HOME/go
-export PATH=$HOME/dotfiles/bin:$PATH:$GOPATH/bin
 
 # git prompt 
-source ~/.git-prompt.sh
+source $HOME/.git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWSTASHSTATE=true
@@ -26,12 +12,9 @@ precmd () { __git_ps1  "%c $" "%s " }
 
 # alias
 alias ll='ls -lG'
-alias e='emacs'
 alias g='git'
 alias d='docker'
 alias j='idea'
-alias ec='emacs -nw ~/.emacs.d/init.el'
-alias repo='cd $(ghq root)/$(ghq list | fzf)'
 
 # complement
 autoload -U compinit; compinit
@@ -52,7 +35,6 @@ setopt hist_ignore_dups
 setopt share_history
 
 # prompt
-#PROMPT='%c $ '
 autoload -U colors; colors
 tmp_prompt="%{${fg[cyan]}%}%n%# %{${reset_color}%}"
 tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"

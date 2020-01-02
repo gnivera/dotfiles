@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-#
-# Push in the current branch
-
-git push origin $(git rev-parse --abbrev-ref HEAD)

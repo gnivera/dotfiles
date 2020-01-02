@@ -1,9 +1,25 @@
 #!/bin/sh
 
-for f in .??*
-do
-    [ "$f" = ".DS_Store" ] && continue
-    [ "$f" = ".git" ] && continue
+DOTFILESPATH=$HOME/dotfiles
 
-    ln -snfv "$HOME"/dotfiles/"$f" "$HOME"/"$f"
+if [ ! -d "$DOTFILESPATH" ]; then
+  git clone https://github.com/gnivera/dotfiles "$DOTFILESPATH"
+else
+  echo "$DOTFILESPATH already downloaded. Updating..."
+  cd "$DOTFILESPATH"
+  git stash
+  git checkout master
+  git pull origin master
+fi
+
+curl -o $HOME/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+
+cd "$DOTPATH"
+
+for f in .??*; do
+  [ "$f" = ".DS_Store" ] && continue
+  [ "$f" = ".git" ] && continue
+  ln -snfv "$HOME"/dotfiles/"$f" "$HOME"/"$f"
 done
+
+cd $HOME
