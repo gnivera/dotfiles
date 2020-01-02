@@ -21,6 +21,7 @@ for f in .??*; do
   [ "$f" = ".DS_Store" ] && continue
   [ "$f" = ".git" ] && continue
   [ "$f" = ".gitignore" ] && continue
+  [ "$f" = ".circleci" ] && continue
   ln -snfv "$HOME"/dotfiles/"$f" "$HOME"/"$f"
 done
 
