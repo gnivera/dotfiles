@@ -25,4 +25,10 @@ for f in .??*; do
   ln -snfv "$HOME"/dotfiles/"$f" "$HOME"/"$f"
 done
 
+if !(type brew > /dev/null 2>&1); then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+brew bundle --global
+
 cd "$CURRENTPATH" || exit
