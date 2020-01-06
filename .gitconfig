@@ -12,7 +12,7 @@
 [gui]
 	encoding = utf-8
 [ghq]
-	root = $HOME/src
+	root = ~/src
 [difftool]
 	prompt = false
 [user]
