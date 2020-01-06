@@ -1,22 +1,24 @@
 # environment
 export GOPATH=$HOME/go
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # git prompt
 if [[ -e $HOME/.git-prompt.sh ]]; then
-  source $HOME/.git-prompt.sh
-  GIT_PS1_SHOWDIRTYSTATE=true
-  GIT_PS1_SHOWUNTRACKEDFILES=true
-  GIT_PS1_SHOWSTASHSTATE=true
-  GIT_PS1_SHOWUPSTREAM=auto
-  PS1='[%n@%m %c$__git_ps1 " (%s)")]\$ '
-  precmd() {
-    __git_ps1 "%c $" "%s "
-  }
+    source $HOME/.git-prompt.sh
+    GIT_PS1_SHOWDIRTYSTATE=true
+    GIT_PS1_SHOWUNTRACKEDFILES=true
+    GIT_PS1_SHOWSTASHSTATE=true
+    GIT_PS1_SHOWUPSTREAM=auto
+    PS1='[%n@%m %c$__git_ps1 " (%s)")]\$ '
+    precmd() {
+        __git_ps1 "%c $" "%s "
+    }
 fi
 
 # alias
 alias ll='ls -lG'
 alias g='git'
+alias h='hub'
 alias d='docker'
 alias j='idea'
 alias q='ghq'
@@ -50,56 +52,60 @@ tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_co
 
 # other
 if [[ -e /usr/local/opt/nvm/nvm.sh ]]; then
-  export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
+    export NVM_DIR="$HOME/.nvm"
+    . "/usr/local/opt/nvm/nvm.sh"
 fi
 
 function _ssh() {
-  compadd $(fgrep 'Host ' ~/.ssh/config | awk '{print $2}' | sort)
+    compadd $(fgrep 'Host ' ~/.ssh/config | awk '{print $2}' | sort)
 }
 
 # checkout git branch
 fco() {
-  local branches branch
-  branches=$(git branch -vv) &&
-    branch=$(echo "$branches" | fzf +m) &&
-    git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+    local branches branch
+    branches=$(git branch -vv) &&
+        branch=$(echo "$branches" | fzf +m) &&
+        git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
 # checkout git branch (including remote branches)
 fcor() {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-    branch=$(echo "$branches" |
-      fzf-tmux -d $((2 + $(wc -l <<<"$branches"))) +m) &&
-    git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+    local branches branch
+    branches=$(git branch --all | grep -v HEAD) &&
+        branch=$(echo "$branches" |
+            fzf-tmux -d $((2 + $(wc -l <<<"$branches"))) +m) &&
+        git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
 frepo() {
-  cd $(ghq root)/$(ghq list | fzf)
+    cd $(ghq root)/$(ghq list | fzf)
 }
 
 function share_history() {
-  history -a
-  history -c
-  history -r
+    history -a
+    history -c
+    history -r
 }
 PROMPT_COMMAND='share_history'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [[ -e $HOME/.zplug/ ]]; then
-  source ~/.zplug/init.zsh
+    source ~/.zplug/init.zsh
 
-  zplug "zsh-users/zsh-syntax-highlighting", defer:2
-  zplug "zsh-users/zsh-history-substring-search"
+    zplug "zsh-users/zsh-syntax-highlighting", defer:2
+    zplug "zsh-users/zsh-history-substring-search"
 
-  if ! zplug check --verbose; then
-    zplug install
-  fi
+    if ! zplug check --verbose; then
+        zplug install
+    fi
 
-  zplug load
+    zplug load
 fi
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+if which rbenv >/dev/null; then eval "$(rbenv init -)"; fi
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

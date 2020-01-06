@@ -1,20 +1,20 @@
+[include]
+	path = ~/.gitconfig.local
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
 	autocrlf = input
 [alias]
-  st = status
+	st = status
 	br = branch
 	co = checkout
 	diff = git diff --word-diff
+	reb = "!r() { git rebase -i HEAD~$1; }; r"
 [color]
 	ui = auto
 [gui]
 	encoding = utf-8
 [ghq]
-	root = ~/src
+	root = ~/repos
 [difftool]
 	prompt = false
-[user]
-	name = Yuki Sato
-	email = yukisato.d@gmail.com

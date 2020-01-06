@@ -4,7 +4,7 @@ CURRENTPATH=$(pwd)
 DOTPATH=$HOME/dotfiles
 
 if [ ! -d "$DOTPATH" ]; then
-  git clone git@github.com:gnivera/dotfiles.git "$DOTPATH"
+  git clone git@github.com:yusato/dotfiles.git "$DOTPATH"
 else
   echo "$DOTPATH already downloaded. Updating..."
   cd "$DOTPATH" || exit
@@ -25,9 +25,12 @@ for f in .??*; do
   ln -snfv "$HOME"/dotfiles/"$f" "$HOME"/"$f"
 done
 
-if !(type brew > /dev/null 2>&1); then
+
+if !(type brew >/dev/null 2>&1); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+
+brew bundle -v --global
 
 if [[ -e /usr/local/opt/fzf/install ]]; then
   /usr/local/opt/fzf/install --all

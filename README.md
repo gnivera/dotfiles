@@ -1,9 +1,9 @@
-[![https://circleci.com/gh/gnivera/dotfiles](https://img.shields.io/circleci/build/github/gnivera/dotfiles?label=analyze)](https://circleci.com/gh/gnivera/dotfiles)
+[![https://circleci.com/gh/yusato/dotfiles](https://img.shields.io/circleci/build/github/yusato/dotfiles?label=analyze)](https://circleci.com/gh/yusato/dotfiles)
 
 # dotfiles
 
 ## Bootstrap
 
 ```
-bash -c "$(curl -L https://raw.githubusercontent.com/gnivera/dotfiles/master/bootstrap.sh)"
+bash -c "$(curl -L https://raw.githubusercontent.com/yusato/dotfiles/master/bootstrap.sh)"
 ```
