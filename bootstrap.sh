@@ -29,6 +29,11 @@ if !(type brew > /dev/null 2>&1); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+if [[ -e /usr/local/opt/fzf/install ]]; then
+  /usr/local/opt/fzf/install --all
+fi
+
+
 read -n1 -p "Run brew bundle ?(y/N): " yn
 if [[ $yn = [yY] ]]; then
   brew bundle -v --global

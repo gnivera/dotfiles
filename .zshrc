@@ -19,6 +19,7 @@ alias ll='ls -lG'
 alias g='git'
 alias d='docker'
 alias j='idea'
+alias q='ghq'
 
 # complement
 autoload -U compinit
@@ -48,8 +49,10 @@ tmp_rprompt="%{${fg[green]}%}[%~]%{${reset_color}%}"
 tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # other
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+if [[ -e /usr/local/opt/nvm/nvm.sh ]]; then
+  export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
+fi
 
 function _ssh() {
   compadd $(fgrep 'Host ' ~/.ssh/config | awk '{print $2}' | sort)
@@ -72,12 +75,18 @@ fcor() {
     git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
+frepo() {
+  cd $(ghq root)/$(ghq list | fzf)
+}
+
 function share_history() {
   history -a
   history -c
   history -r
 }
 PROMPT_COMMAND='share_history'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [[ -e $HOME/.zplug/ ]]; then
   source ~/.zplug/init.zsh
