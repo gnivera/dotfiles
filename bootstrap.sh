@@ -29,6 +29,21 @@ if !(type brew > /dev/null 2>&1); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew bundle -v --global
+read -n1 -p "Run brew bundle ?(y/N): " yn
+if [[ $yn = [yY] ]]; then
+  brew bundle -v --global
+else
+  echo "Skipped brew bundle"
+fi
+
+if [[ -e /usr/local/opt/fzf/install ]]; then
+  /usr/local/opt/fzf/install --all
+fi
+
+if [[ ! -e $HOME/.zplug/ ]]; then
+  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+else
+  echo "$HOME/.zplug' already exist"
+fi
 
 cd "$CURRENTPATH" || exit

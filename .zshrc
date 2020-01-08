@@ -78,3 +78,19 @@ function share_history() {
   history -r
 }
 PROMPT_COMMAND='share_history'
+
+if [[ -e $HOME/.zplug/ ]]; then
+  source ~/.zplug/init.zsh
+
+  zplug "zsh-users/zsh-syntax-highlighting", defer:2
+  zplug "zsh-users/zsh-history-substring-search"
+
+  if ! zplug check --verbose; then
+    zplug install
+  fi
+
+  zplug load
+fi
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
