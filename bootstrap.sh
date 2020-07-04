@@ -25,20 +25,15 @@ for f in .??*; do
   ln -snfv "$HOME"/dotfiles/"$f" "$HOME"/"$f"
 done
 
-
-if !(type brew >/dev/null 2>&1); then
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
-brew bundle -v --global
-
 if [[ -e /usr/local/opt/fzf/install ]]; then
   /usr/local/opt/fzf/install --all
 fi
 
-
 read -n1 -p "Run brew bundle ?(y/N): " yn
 if [[ $yn = [yY] ]]; then
+  if !(type brew >/dev/null 2>&1); then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
   brew bundle -v --global
 else
   echo "Skipped brew bundle"
